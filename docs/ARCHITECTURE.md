@@ -8,6 +8,19 @@ This document details the architecture, design choices, data flow, and technical
 
 The system ingests, transcribes, chunks, embeds, indexes, and queries **316 YouTube videos** from Striver's A2Z DSA playlist. It exposes an interactive AI Mentor with hybrid retrieval, cross-encoder reranking, grounded LLM responses, and YouTube timestamp citations across 5 mentorship modes.
 
+
+```
+React UI 
+  └──> Node.js / Express Proxy (Session State & Routing)
+        └──> Python / FastAPI RAG Service
+              ├──> Qdrant Cloud (Dense Vector Search: Top 15)
+              ├──> BM25 Index (Sparse Keyword Search: Top 15)
+              ├──> Reciprocal Rank Fusion (RRF k=60: Merges to Top 10)
+              ├──> Cross-Encoder Reranker (ms-marco-MiniLM-L-6-v2: Reranks to Top 5)
+              └──> LLM Provider (Groq / Gemini / OpenAI)
+                    └──> Grounded Answer + YouTube Timestamp Citations
+```
+
 ```mermaid
 flowchart TD
     subgraph Frontend["Client (React + Vite)"]

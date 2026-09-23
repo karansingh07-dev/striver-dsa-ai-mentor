@@ -1,20 +1,83 @@
 # Striver DSA AI Mentor
 
-> A full-stack RAG (Retrieval-Augmented Generation) system that transforms 316 Striver A2Z DSA YouTube lectures into an interactive AI mentor with hybrid search, cross-encoder reranking, and grounded LLM answers.
+> A full-stack RAG (Retrieval-Augmented Generation) system indexing **316 Striver A2Z DSA YouTube lectures** (**7,601 vector embeddings in Qdrant Cloud**) with hybrid search (dense + BM25), Reciprocal Rank Fusion (RRF), Cross-Encoder reranking, and grounded answers with timestamp-aware YouTube citations across 5 mentorship modes.
 
-## Problem Statement
+**GitHub Repository:** [https://github.com/karansingh07-dev/striver-dsa-ai-mentor](https://github.com/karansingh07-dev/striver-dsa-ai-mentor)
+
+---
+
+## 📚 Project Documentation
+
+- 📐 **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** — Complete system architecture, data flow, and design trade-offs.
+- 🎙️ **[PROJECT_EXPLANATION.md](docs/PROJECT_EXPLANATION.md)** — 2-minute spoken interview script & elevator pitch.
+- 💡 **[INTERVIEW_QA.md](docs/INTERVIEW_QA.md)** — 21 deep technical interview questions & detailed answers.
+- 📄 **[RESUME_BULLETS.md](docs/RESUME_BULLETS.md)** — Quantified resume bullets for AI/ML & Full-Stack Engineer roles.
+- 🚀 **[DEPLOYMENT.md](DEPLOYMENT.md)** — Docker, Cloud deployment & environment configuration guide.
+
+---
+
+## 💡 Verified Demo Interaction
+
+### Query
+> *"Explain binary search lower bound"*
+
+### Mode
+`Explain`
+
+### Response (Abbreviated)
+> The **Lower Bound** of an element `arr[i] >= x` in a sorted array is the smallest index `i` such that `arr[i]` is greater than or equal to target value `x`.
+> 
+> **Algorithmic Logic:**
+> 1. Initialize `low = 0`, `high = n - 1`, and `ans = n`.
+> 2. Calculate `mid = low + (high - low) / 2`.
+> 3. If `arr[mid] >= target`, update `ans = mid` and move left (`high = mid - 1`).
+> 4. Otherwise, move right (`low = mid + 1`).
+> 
+> **Time Complexity:** $O(\log N)$ | **Space Complexity:** $O(1)$
+
+### Cited Lecture & Timestamp Source
+- **Lecture Title:** `BS-2. Implement Lower Bound and Upper Bound`
+- **Video ID:** `6zhGS79oQ4k`
+- **Timestamp:** `03:25` (205s)
+- **Playable Link:** [https://www.youtube.com/watch?v=6zhGS79oQ4k&t=205s](https://www.youtube.com/watch?v=6zhGS79oQ4k&t=205s)
+
+---
+
+## 📸 Interface Screenshots
+
+The interactive UI is rendered with React 18 + Vite and Tailwind CSS. You can view the live interface by running `cd client && npm run dev`. *(UI screenshots can be captured and placed under `docs/screenshots/`)*.
+
+---
+
+## 🛠️ Technology Stack
+
+| Layer | Technology | Usage |
+|---|---|---|
+| **Frontend UI** | React 18, Vite, Tailwind CSS | Single-page chat interface, Markdown code block rendering, citation cards |
+| **Backend Middleware** | Node.js, Express | API Proxy Gateway, session state store, CORS management |
+| **AI RAG Service** | Python 3.11, FastAPI, Uvicorn | Hybrid retrieval, re-ranking, prompt assembly, lifespan events |
+| **Speech-to-Text** | Faster-Whisper (`base`) | GPU float16 audio transcription with CPU int8 fallback |
+| **Dense Search** | Sentence-Transformers (`all-MiniLM-L6-v2`) | 384-dimensional dense vector embeddings |
+| **Vector DB** | Qdrant Cloud | Cloud vector database storing **7,601 vector points** |
+| **Sparse Search** | rank-bm25 | BM25 keyword matching over tokenized transcript chunks |
+| **Reranker** | Cross-Encoder (`ms-marco-MiniLM-L-6-v2`) | Joint query-passage cross-attention re-scoring |
+| **LLM Providers** | Groq (`openai/gpt-oss-20b`), Gemini, OpenAI | Grounded response generation |
+
+---
+
+## 🎯 Problem Statement
 
 Learning Data Structures & Algorithms (DSA) from video lectures is passive. Students cannot easily:
-- Search across 316 lectures for specific concepts
+- Search across 316 lectures for specific concepts or syntax
 - Get timestamp-precise citations from lecture transcripts
 - Receive contextual hints without immediately revealing the full solution
 - Verify their code against lecture-taught patterns
 
 This project solves those problems by indexing timestamp-aware transcript chunks with hybrid semantic + keyword retrieval, reranking results for relevance, and generating grounded answers with YouTube timestamp citations.
 
-## Key Features
+## 🌟 Key Features
 
-- **316-video knowledge base** ingested from the Striver A2Z DSA YouTube playlist
+- **316-video knowledge base** ingested from Striver's A2Z DSA YouTube playlist
 - **Hybrid retrieval**: semantic search (Qdrant) + BM25 keyword search combined with Reciprocal Rank Fusion (RRF)
 - **Cross-encoder reranking** for precision result ordering
 - **Grounded LLM answers** that cite YouTube timestamps from the actual lecture content
@@ -22,6 +85,7 @@ This project solves those problems by indexing timestamp-aware transcript chunks
 - **Multi-turn conversation state** for progressive hints, quiz tracking, and code review context
 - **Full-stack UI**: React chat interface with Markdown rendering and source cards
 - **Production-ready**: FastAPI lifespan startup, health checks, request validation, CORS, and error handling
+
 
 ## Architecture
 
