@@ -1,0 +1,23 @@
+FROM node:20-slim AS builder
+
+WORKDIR /app
+
+COPY client/package*.json ./client/
+RUN cd client && npm ci
+
+COPY . .
+
+WORKDIR /app/client
+RUN npm run build
+
+FROM node:20-slim
+
+WORKDIR /app
+
+RUN npm install -g serve
+
+COPY --from=builder /app/client/dist ./dist
+
+EXPOSE 3000
+
+CMD ["serve", "-s", "dist", "-l", "3000"]

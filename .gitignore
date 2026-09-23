@@ -1,0 +1,50 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+server/.env
+client/.env
+
+# YouTube authentication cookies
+cookies.txt
+cookies.txt.txt
+*.txt.txt
+
+# Logs
+*.log
+
+# Data and SQLite/Qdrant storage
+data/downloads/
+data/transcripts/
+data/chunks/
+data/embeddings/
+data/qdrant_db/
+data/status/
+downloads/
+transcripts/
+chunks/
+embeddings/
+
+# Python cache & virtualenv
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+
+# IDE / Editor configuration
+.vscode/
+.idea/
+*.swp
+
+# Node dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db

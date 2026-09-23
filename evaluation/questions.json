@@ -1,0 +1,100 @@
+[
+  {
+    "id": "Q01",
+    "question": "What is GCD of two numbers and how is it defined?",
+    "expected_topic": "GCD definition & brute force approach",
+    "expected_video_id": "1xNbjMdbjug",
+    "expected_keywords": ["gcd", "divide", "1"]
+  },
+  {
+    "id": "Q02",
+    "question": "How does the Euclidean algorithm work using subtraction to find GCD?",
+    "expected_topic": "Euclidean algorithm (subtraction-based)",
+    "expected_video_id": "1xNbjMdbjug",
+    "expected_keywords": ["subtract", "gcd", "minus"]
+  },
+  {
+    "id": "Q03",
+    "question": "Euclidean algorithm ka time complexity kya hota hai?",
+    "expected_topic": "Time complexity of the Euclidean algorithm",
+    "expected_video_id": "1xNbjMdbjug",
+    "expected_keywords": ["complexity", "log", "gcd"]
+  },
+  {
+    "id": "Q04",
+    "question": "How do you implement the Euclidean algorithm to find GCD of a and b using the modulo operator?",
+    "expected_topic": "Euclidean algorithm implementation (modulo)",
+    "expected_video_id": "1xNbjMdbjug",
+    "expected_keywords": ["gcd", "mod", "modulo"]
+  },
+  {
+    "id": "Q05",
+    "question": "How do you count the number of digits in a number using logarithms?",
+    "expected_topic": "Digit count via log base 10",
+    "expected_video_id": "1xNbjMdbjug",
+    "expected_keywords": ["digit", "log", "10"]
+  },
+  {
+    "id": "Q06",
+    "question": "Why do we check factors of a number only up to its square root to decide if it is prime?",
+    "expected_topic": "Prime check / factors in O(sqrt n)",
+    "expected_video_id": "1xNbjMdbjug",
+    "expected_keywords": ["square root", "factor", "prime"]
+  },
+  {
+    "id": "Q07",
+    "question": "C++ me first program me apna name kaise print karte hain?",
+    "expected_topic": "C++ basics: print name first program",
+    "expected_video_id": "EAR7De6Goz4",
+    "expected_keywords": ["print", "name", "c out"]
+  },
+  {
+    "id": "Q08",
+    "question": "What are the types of functions in C++ and why do we use functions?",
+    "expected_topic": "C++ functions: void/return, modularize code",
+    "expected_video_id": "EAR7De6Goz4",
+    "expected_keywords": ["function", "void", "modularize"]
+  },
+  {
+    "id": "Q09",
+    "question": "Pass by value kya hota hai? Kya original variable change hota hai?",
+    "expected_topic": "Pass by value semantics in C++",
+    "expected_video_id": "EAR7De6Goz4",
+    "expected_keywords": ["pass by value", "copy", "original"]
+  },
+  {
+    "id": "Q10",
+    "question": "What is pass by reference and how is it different from pass by value?",
+    "expected_topic": "Pass by reference semantics in C++",
+    "expected_video_id": "EAR7De6Goz4",
+    "expected_keywords": ["pass by reference", "pass by value", "copy"]
+  },
+  {
+    "id": "Q11",
+    "question": "How do I set up VS Code for DSA and CP with the input/output split format?",
+    "expected_topic": "VS Code setup: C++ extension + split I/O",
+    "expected_video_id": "h3uDCJ5mvgw",
+    "expected_keywords": ["extension", "c++", "setup"]
+  },
+  {
+    "id": "Q12",
+    "question": "What does Striver's A2Z DSA course cover and how should I use it to learn DSA?",
+    "expected_topic": "A2Z DSA course structure (theory + problems)",
+    "expected_video_id": "0bHoB32fuj0",
+    "expected_keywords": ["theory", "problems", "course"]
+  },
+  {
+    "id": "Q13",
+    "question": "GCD kaise nikalte hain Euclidean algorithm se, step by step?",
+    "expected_topic": "Euclidean algorithm step-by-step (modulo)",
+    "expected_video_id": "1xNbjMdbjug",
+    "expected_keywords": ["gcd", "mod", "modulo"]
+  },
+  {
+    "id": "Q14",
+    "question": "C++ me for loop aur while loop kaise likhte hain?",
+    "expected_topic": "C++ control flow: for and while loops",
+    "expected_video_id": "EAR7De6Goz4",
+    "expected_keywords": ["loop", "while", "for"]
+  }
+]
